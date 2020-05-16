@@ -5,7 +5,7 @@ import java.util.ArrayList;
 
 public class Bookstore {
 
-  public String name = "Chris's Vintage Books";
+  private String name = "Chris's Vintage Books";
   public String address = "2000 Melrose Blvd.";
   public boolean hasUsedBooks = true;
   public boolean open = true;
@@ -71,12 +71,21 @@ public class Bookstore {
     return this.titles.size();
   }
 
-  public void findBook(String name) {
-    for (String book : this.titles) {
-      if (book.toLowerCase().contains(name.toLowerCase())) {
-        System.out.println(book);
+  public void findBook(String book) {
+    boolean inStock = false;
+    for (String values : this.titles) {
+      if (values.toLowerCase().contains(book.toLowerCase())) {
+        inStock = true;
+        System.out.println(values);
       }
     }
+    if (!inStock) {
+      System.out.println("Sorry we dont have that book.");
+    }
+  }
+
+  public String getName() {
+    return this.name;
   }
 
   public void getAttributes() {

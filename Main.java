@@ -8,7 +8,7 @@ public class Main {
 
     Bookstore myStore = new Bookstore("United Book Nation");
     System.out.println(myStore);
-
+    System.out.println(myStore.getName());
     myStore.printBooks();
 
     System.out.println(myStore.totalBooks());
